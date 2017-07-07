@@ -52,6 +52,7 @@ export class TelemetryOverview extends React.PureComponent { // eslint-disable-l
   render() {
     const message = this.props.message ? this.props.message : {};
     const gps = (this.props.message && this.props.message.gps) ? this.props.message.gps : {};
+    const flight = (this.props.message && this.props.message.flight) ? this.props.message.flight : {};
     const commDevice = (this.props.message && this.props.message.comm_devices
       && this.props.message.comm_devices[0]) ? this.props.message.comm_devices[0] : {};
 
@@ -96,6 +97,10 @@ export class TelemetryOverview extends React.PureComponent { // eslint-disable-l
             <td>{toFixed(message.id, 0)}</td>
           </tr>
           <tr>
+            <td>Flight state</td>
+            <td>{flight.flight_state}</td>
+          </tr>
+          <tr>
             <td>Distance</td>
             <td>{formattedDistance}</td>
           </tr>
@@ -106,6 +111,10 @@ export class TelemetryOverview extends React.PureComponent { // eslint-disable-l
           <tr>
             <td>Speed (uncertainty)</td>
             <td>{toFixed(gps.speed_meters_per_sec, 1)} m/s ({toFixed(gps.speed_uncertainty_meters_per_sec, 2)} m/s)</td>
+          </tr>
+          <tr>
+            <td>Climb (uncertainty)</td>
+            <td>{toFixed(gps.climb_meters_per_sec, 1)} m/s ({toFixed(gps.climb_uncertainty_meters_per_sec, 2)} m/s)</td>
           </tr>
           <tr>
             <td>Current RSSI</td>

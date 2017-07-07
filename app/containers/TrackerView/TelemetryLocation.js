@@ -59,7 +59,7 @@ export class TelemetryLocation extends React.PureComponent { // eslint-disable-l
           </tr>
           <tr>
             <td>Track (uncertainty)</td>
-            <td>{toFixed(gps.track, 4)} deg ({toFixed(gps.track_uncertainty_degrees, 4)} deg)</td>
+            <td>{toFixed(gps.track_degrees, 4)} deg ({toFixed(gps.track_uncertainty_degrees, 4)} deg)</td>
           </tr>
           <tr>
             <td>Fix mode</td>

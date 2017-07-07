@@ -16,6 +16,7 @@ import { TelemetryHistoryControls } from './TelemetryHistoryControls';
 import { TelemetryOverview } from './TelemetryOverview';
 import { TelemetryGeneral } from './TelemetryGeneral';
 import { TelemetryLocation } from './TelemetryLocation';
+import { TelemetryFlight } from './TelemetryFlight';
 import { TelemetrySensors } from './TelemetrySensors';
 import { TelemetryCommDevice } from './TelemetryCommDevice';
 import { TelemetryCommProtocol } from './TelemetryCommProtocol';
@@ -211,17 +212,20 @@ export class TrackerView extends React.PureComponent { // eslint-disable-line re
             <TelemetrySensors message={this.props.selectedMessage} />
           </div>
           <div className="col-lg-6">
-            <TelemetryCommDevice message={this.props.selectedMessage} />
+            <TelemetryFlight message={this.props.selectedMessage} />
           </div>
         </div>
 
-        {showCommProtocol &&
         <div className="row">
-          <div className="col-lg-12">
+          {showCommProtocol &&
+          <div className="col-lg-6">
             <TelemetryCommProtocol message={this.props.selectedMessage} />
           </div>
+          }
+          <div className="col-lg-6">
+            <TelemetryCommDevice message={this.props.selectedMessage} />
+          </div>
         </div>
-        }
       </div>
     );
   }

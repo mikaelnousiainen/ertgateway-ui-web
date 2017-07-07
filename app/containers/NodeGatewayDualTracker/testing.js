@@ -30,7 +30,7 @@ const testMessage = {
     longitude_uncertainty_meters: 11.711,
     altitude_meters: 33.630000000000003,
     altitude_uncertainty_meters: 137.77000000000001,
-    track: 30.994299999999999,
+    track_degrees: 30.994299999999999,
     track_uncertainty_degrees: null,
     speed_meters_per_sec: 0.35199999999999998,
     speed_uncertainty_meters_per_sec: 1.1100000000000001,
